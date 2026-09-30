@@ -2,6 +2,7 @@
 Basic 2D template controller for any gamecontroller and keyboard
     ! Do not forget to bind controller buttons
     * Player moves from left to right only
+    * Player has gravity
 */
 
 using UnityEngine;
@@ -50,6 +51,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveX * moveSpeed, rb.linearVelocity.y).normalized;
     }
 }
